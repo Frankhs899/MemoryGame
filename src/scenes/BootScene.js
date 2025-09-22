@@ -5,11 +5,12 @@ export class BootScene extends Phaser.Scene {
     super('BootScene');
   }
 
-  preload() {
-    this.load.image('taikodrummaster', '/assets/pics/taikodrummaster.jpg');
-  }
+  // preload() {
+  //   this.load.image('taikodrummaster', '/assets/pics/taikodrummaster.jpg');
+  // }
 
   create() {
-    this.add.image(400, 300, 'taikodrummaster');
+    this.scene.start('PreloaderScene');
+    // this.add.image(400, 300, 'taikodrummaster');
   }
 }
