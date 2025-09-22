@@ -38,6 +38,14 @@ export class PreloaderScene extends Phaser.Scene {
       progressBar.fillRect(250, 280, 300 * value, 30);
     });
 
+    this.load.on('complete', () => {
+      progressBar.destroy();
+      progressBox.destroy();
+      loadingText.destroy();
+      percentText.destroy();
+      this.scene.start('GameScene');
+    });
+
     // Carga de assets
     this.load.image('card_back', 'assets/card_back.svg');
     for (let i = 1; i <= 6; i++) {
